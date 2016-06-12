@@ -1,0 +1,40 @@
+* {
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	font-family: Lato, sans-serif;
+}
+header {
+	background-color: #234;
+	color: white;
+	height: 50px;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-left;
+	align-items: stretch;
+}
+.title, .menu {
+	display: flex;
+	align-items: stretch;
+}
+.title {
+	margin-left: 30px;
+	flex: 4;
+}
+.menu {
+	margin-right: 10px;
+	flex: 1;
+}
+.menu a, .menu p {
+	padding: 0 20px 0 20px;
+}
+.menu a, .menu p, .title a {
+	padding-top: 15px;
+	color: white;
+}
+.users p, .relationship_button {
+	display: inline-block;
+}
+.field {
+	margin-bottom: 10px;
+}

@@ -1,0 +1,6 @@
+<% User.all.where("id != ?", current_user.id).where(role_id: 2).each do |user| %>
+	<p><%= user.name %></p>
+	<div class="relationship_button">
+		<%= render "components/follow_button", user: user %>
+	</div>
+<% end %>

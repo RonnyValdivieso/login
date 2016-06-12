@@ -1,0 +1,55 @@
+<h2>Editar usuario</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= devise_error_messages! %>
+  
+  <div class="field">
+    <%= f.label :nombre %><br />
+    <%= f.text_field :name, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :tipo_de_usuario %><br />
+    <%= f.label :artista %><%= f.radio_button :role_id, 2 %>
+    <%= f.label :fan %><%= f.radio_button :role_id, 1 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :correo_electrónico %><br />
+    <%= f.email_field :email %>
+  </div>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nueva_contraseña %> <i>(dejar vacío si no quiere modificarla)</i><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :confirmar_nueva_contraseña %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :contraseña_actual %> <i>(we need your current password to confirm your changes)</i><br />
+    <%= f.password_field :current_password, autocomplete: "off" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Actualizar" %>
+  </div>
+<% end %>
+
+<div>
+  <h2>Vincular cuenta con:</h2>
+  <%= link_to "Facebook", "/users/auth/facebook" %>
+</div>
+
+<h3>Eliminar mi cuenta</h3>
+
+<p><%= button_to "Eliminar", registration_path(resource_name), data: { confirm: "Está seguro?" }, method: :delete %></p>
+
+<%= link_to "Atrás", :back %>

@@ -1,0 +1,19 @@
+<header>
+	<div class="title">
+		<a href="/">Fan center</a>
+	</div>
+	<div class="menu">
+		<p>Siguiendo: <%= current_user.following.count %></p>
+		<% if current_user.role_id == 2 %>
+			<p>Seguidores: <%= current_user.followers.count %></p>
+		<% end %>
+		<p><strong><%= current_user.name %></strong></p>
+		<%= link_to "Editar", edit_registration_path(current_user) %>
+		<%= link_to "Salir", destroy_user_session_path, method: :delete %>
+	</div>
+</header>
+<div class="feed">
+	<div class="users">
+		<%= render "user/list" %>
+	</div>
+</div>
