@@ -14,10 +14,14 @@ Rails.application.routes.draw do
 
   resources :users do
     member do
+      resources :posts
       get :following, :followers
     end
   end
 
   resources :relationships
+
+  get 'post/new', to: 'posts#new'
+  get 'post/destroy', to: 'posts#destroy'
 
 end

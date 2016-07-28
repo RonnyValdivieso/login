@@ -5,11 +5,14 @@ class User < ActiveRecord::Base
 
 	belongs_to :role
 
-	has_many :identities
+	has_many :identities, dependent: :destroy
 	has_many :active_relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
 	has_many :passive_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
 	has_many :following, through: :active_relationships, source: :followed
 	has_many :followers, through: :passive_relationships, source: :follower
+
+	has_many :posts, dependent: :destroy
+	accepts_nested_attributes_for :posts
 
 	def facebook
 		identities.where( provider: "facebook" ).first

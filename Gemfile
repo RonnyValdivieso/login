@@ -1,9 +1,17 @@
 source 'https://rubygems.org'
 ruby '2.1.8'
 
+# Autenticación
 gem 'devise'
 gem 'omniauth-facebook'
+
+# Base de datos
 gem 'pg'
+
+# Posts (imágenes)
+gem 'paperclip', '~> 4.2'
+
+gem 'simple_form', '~> 3.1.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'

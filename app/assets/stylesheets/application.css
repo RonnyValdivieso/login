@@ -38,3 +38,22 @@ header {
 .field {
 	margin-bottom: 10px;
 }
+
+.post {
+	width: 300px;
+	margin: 0 auto 0 auto;
+	padding: 5px;
+	background-color: #eee;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.post img {
+	max-width: 99%;
+}
+.new_post {
+	margin: 20px 0 20px 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}

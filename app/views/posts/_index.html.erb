@@ -1,0 +1,13 @@
+<% @posts = Post.all.order('created_at DESC') %>
+<% @posts.each do |post| %>
+	<div class="post">
+		<p><%= post.user.name %></p>
+		<%= image_tag post.image.url(:medium) %>
+		<p><%= post.caption %></p>
+		<div>
+			<% if post.user.id == current_user.id %>
+				<%= link_to "Eliminar", post_path(post), method: :delete, data: { confirm: "Estás seguro de querer eliminar esta publicación?" } %>
+			<% end %>
+		</div>
+	</div>
+<% end %>

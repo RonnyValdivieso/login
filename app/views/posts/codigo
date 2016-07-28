@@ -1,0 +1,2 @@
+<%= link_to "Editar", edit_post_path(post) %>
+			<%= link_to "Eliminar", post_path(post), method: :delete, data: { confirm: "Estás seguro de querer eliminar esta publicación?" } %>

@@ -14,6 +14,9 @@
 </header>
 <div class="feed">
 	<div class="users">
-		<%= render "user/list" %>
+		<div class="new_post">
+			<%= link_to 'Nueva publicación', 'post/new' %>
+		</div>
+		<%= render 'posts/index' %>
 	</div>
 </div>

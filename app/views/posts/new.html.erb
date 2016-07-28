@@ -1,0 +1,8 @@
+<% @user = User.find(current_user.id) %>
+<%= form_for([@user, @user.posts.build]) do |f| %>
+	<%= f.label :image %>
+	<%= f.file_field :image %>
+	<%= f.label :caption %>
+	<%= f.text_area :caption %>
+	<%= f.submit %>
+<% end %>
